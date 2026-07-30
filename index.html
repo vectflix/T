@@ -195,7 +195,7 @@
   <span data-i="2"></span>
 </div>
 
-<audio id="bgm" src="song.mp3" loop preload="auto"></audio>
+<audio id="bgm" loop preload="auto"></audio>
 <button id="music-toggle" aria-label="Toggle music">🔊</button>
 
 <!-- Screen 1: Welcome -->
@@ -242,6 +242,13 @@
 </section>
 
 <script>
+/* ================================================================
+   👉 EDIT THIS if you upload the song under a different filename.
+   Just put the exact filename (with extension) you gave it on GitHub,
+   as long as it sits in the same folder as this index.html.
+   ================================================================ */
+const SONG_FILENAME = "song.mp3";
+
 /* ---------- Screen navigation ---------- */
 const screens = [document.getElementById('screen-0'), document.getElementById('screen-1'), document.getElementById('screen-2')];
 const dots = document.querySelectorAll('#dots span');
@@ -256,6 +263,7 @@ function goTo(i){
 
 /* ---------- Audio (unlocked by first tap) ---------- */
 const bgm = document.getElementById('bgm');
+bgm.src = SONG_FILENAME;
 const musicBtn = document.getElementById('music-toggle');
 
 function startMusic(){
@@ -442,5 +450,4 @@ function animate(){
 animate();
 </script>
 </body>
-  </html>
-
+</html>
